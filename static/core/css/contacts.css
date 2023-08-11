@@ -1,0 +1,629 @@
+/* HTML ХЕДЕРA С НАВИГАЦИЕЙ ПО САЙТУ */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    padding: 15px 147px;
+}
+
+nav
+{
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+nav ul
+{
+    width: 100%;
+    text-align: right;
+}
+
+nav ul li
+{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 30px;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+}
+
+nav ul li a svg
+{
+    margin-left: 7px;
+}
+
+.header_logo
+{
+    height: 50px;
+    width: 600px;
+}
+
+.header_logo h1
+{
+    color: #272B38;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: 0.18px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+}
+
+.header_logo h1 span
+{
+    color: #FF284C;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.18px;
+}
+
+.tagline
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 11.7px */
+    position: relative;
+    bottom: 52px;
+    left: 70px;
+}
+
+.sub_menu_wrap
+{
+    width: 264px;
+    height: 152px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+
+    position: absolute;
+    right: 147px;
+    z-index: 2;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub_menu_wrap.open_menu
+{
+    max-height: 170px;
+}
+
+.sub_menu
+{
+    position: relative;
+    right: 30px;
+}
+
+.sub_menu_wrap a
+{
+    text-decoration: none;
+
+    color: #272B38;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+
+    margin-left: 25px;
+    margin-top: px;
+
+    position: relative;
+    right: 25px;
+    bottom: 10px;
+}
+
+.cats_p
+{
+    color: #FF284C;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+}
+
+.sub_menu_wrap a svg
+{
+    position: relative;
+    top: 20px;
+    left: 99px;
+}
+
+.svg_border
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    right: 0px;
+    bottom: 1px;
+}
+
+
+
+
+
+/* CSS ФОРМА ЗАПРОСА ЗВОНКА */
+
+.order_a_call_card
+{
+    width: 558px;
+    height: 241px;
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+
+    /* position: absolute;
+    right: 147px;
+    top: 196px;
+    z-index: 1; */
+
+    margin-top: 40px;
+}
+
+.order_a_call_card h1
+{
+    width: 264px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+
+
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+}
+
+.input_string input
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-top: 5px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+
+    border: none;
+    transition: border 0.3s ease, color 0.3s ease;
+    /* border-color: transparent; */
+    border-radius: 8px;
+    background: #E9EAEB;
+
+    display: flex;
+    width: 470px;
+    padding: 8px 14px;
+    align-items: flex-start;
+    gap: 10px
+}
+
+.input_string input:focus,
+.input_string input:valid
+{
+    border: 1px solid #4A8FB6;
+    color: #272B38;
+}
+
+.submit_btn button
+{
+    display: flex;
+    width: 498px;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    left: 30px;
+    top: 45px;
+
+    border: none;
+    border-radius: 8px;
+    background: #FF284C;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    transition: background-color 0.3s ease;
+}
+
+.submit_btn button:hover
+{
+    background: #FF627C;
+}
+
+.submit_btn button:active
+{
+    background: #D10628;
+}
+
+
+
+.wrap_contact_owner_info
+{
+    padding: 90px 147px 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* CSS КОНТАКТНЫЕ ДАННЫЕ */
+
+.contact_info_card
+{
+    height: 300px;
+    width: 350px;
+    background-color: #ffffff;
+
+    /* position: absolute;
+    left: 147px;
+    top: 155px; */
+}
+
+.contact_info_card p
+{
+    color: #272B38;
+    font-family: Comfortaa;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 45px;
+}
+
+/* .owner_info
+{
+    display: block;
+} */
+
+.owner_info p
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.owner_info p svg
+{
+    margin-right: 13px;
+    position: relative;
+    top: 5px;
+}
+
+.owner_info p span
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.owner_social_network
+{
+    position: relative;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.owner_social_network svg
+{
+    /* position: relative;
+    width: 103px;
+    height: 103px; */
+    /* display: inline-block; */
+    margin-right: -37px;
+
+}
+
+.owner_social_network_logo
+{
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+    bottom: 77px;
+
+}
+
+.svg_wsp
+{
+    width: 33.289px;
+    height: 33.289px;
+    flex-shrink: 0;
+    margin-left: 11px;
+}
+
+.svg_inst
+{
+    width: 26.053px;
+    height: 26.053px;
+    flex-shrink: 0;
+
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.svg_tg
+{
+    width: 24.605px;
+    height: 24.605px;
+    flex-shrink: 0;
+
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.svg_vk
+{
+    width: 33.254px;
+    height: 33.254px;
+    flex-shrink: 0;
+
+    margin-left: 5px;
+}
+
+.img_insd
+{
+    width: 37.632px;
+    height: 37.632px;
+    flex-shrink: 0;
+
+    margin-right: 19px;
+}
+
+/* .owner_social_network_logo div
+{
+    margin-right: 23px;
+} */
+
+/* .owner_social_network_logo
+{
+    position: relative;
+    right: 24px;
+} */
+
+
+
+
+
+/* CSS ПОДВАЛ */
+
+/* .footer_wrap
+{
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+} */
+
+.footer
+{
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+    /* width: 100%; */
+    height: 210px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_logo
+{
+    height: 50px;
+    width: 260px;
+    margin-bottom: 35px;
+}
+
+.footer_logo h1
+{
+    color: #FFF;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: 0.18px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+}
+
+.footer_logo h1 span
+{
+    color: #FF284C;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.18px;
+}
+
+.footer_tagline
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 11.7px */
+    position: relative;
+    bottom: 52px;
+    left: 70px;
+}
+
+.owner_info_footer p
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.owner_info_footer p svg
+{
+    margin-right: 10px;
+}
+
+.footer_2 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_2 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_2 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.footer_3 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_3 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_3 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+
+.footer_4 h1
+{
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 26.4px */
+}
+
+.footer_4 p
+{
+    margin-bottom: 10px;
+}
+
+.points
+{
+    color: #FFF;
+    width: 80px;
+    height: 1px;
+    position: relative;
+    bottom: 23px;
+}
+
+.footer_4 p a
+{
+    text-decoration: none;
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.social_network_links
+{
+    margin-top: 37px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_network_links img
+{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}

@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito+Sans:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'core/css/reviews.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'core/css/home.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'core/css/bombed_kittens.css' %}">
     <title>Заказать звонок</title>
 </head>
 <body>
     <!-- HTML ХЕДЕРA С НАВИГАЦИЕЙ ПО САЙТУ -->
-    <div class="header">
+    <div class="header1">
         <nav>
             <div class="header_logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
@@ -96,57 +97,77 @@
             </div>
         </div>
     </div>
-    <script>
-        let subMenu = document.getElementById("SubMenu");
-
-        function ToggleMenu(){
-            subMenu.classList.toggle("open_menu");
-        }
-    </script>
 
 
 
-    <!-- HTML ОТЗЫВЫ ИЗ ИНСТАГРАМА -->
-    <div class="reviews_photo">
-        <h1>Отзывы из Инстаграм</h1>
-        <div class="slides">
-            <div class="carousel-container">
-                <div class="carousel">
-                  <div class="slide">Слайд 1</div>
-                  <div class="slide">Слайд 2</div>
-                  <div class="slide">Слайд 3</div>
+
+
+
+    <!-- HTML ВЗРЫВНЫЕ КОТЯТЯ ПОЗИЦИЯ -->
+    <div class="bombed_kittens_position">
+        <!-- HTML ВЗРЫВНЫЕ КОТЯТЯ ЦЕНЫ -->
+        <div class="bombed_kittens_price">
+            <h1>Взрывные котятя</h1>
+            <span>Краткое и понятное описание продукта “Взрывные котята”</span>
+            <h2>Цены</h2>
+            <p>Хорошие котята (основа) - 990 ₽</p>
+            <p>Плохие котята (основа) - 990 ₽</p>
+            <p>Разрывной котенок (дополнение) - 990 ₽</p>
+            <p>Бесстыдные котята (дополнение) - 990 ₽</p>
+            <p>Лающий котенок (дополнение) - 990 ₽</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input_str">
+                    <input type="text" name="name" placeholder="Имя" required>
                 </div>
-                <button id="prevButton">Назад</button>
-                <button id="nextButton">Вперед</button>
+                <div class="input_str">
+                    <input type="text" id="phone_number" name="phone" placeholder="Номер телефона" required>
+                </div>
+                <div class="submit_btn">
+                    <button type="submit">Оставить заявку</button>
+                </div>
+            </form>
+            <script>
+                const element = document.getElementById('phone_number');
+                const maskOptions = {
+                    mask: '+{7}(000)000-00-00'
+                };
+                const mask = IMask(element, maskOptions);
+            </script>
+        </div>
+
+
+
+
+
+        <!-- HTML ВЗРЫВНЫЕ СЛАЙДЫ -->
+        <div class="bombed_kittens_wrap">
+            <div class="bombed_kittens_slides">
+                <div class="card_slide">
+                    <img src="{% static 'core/img/img_cat.png' %}" alt="">
+                    <h1>Хорошие котята (основа)</h1>
+                </div>
+                <div class="card_slide">
+                    <img src="{% static 'core/img/img_cat.png' %}" alt="">
+                    <h1>Плохие котята (основа)</h1>
+                </div>
+            </div>
+
+
+            <div class="card_slide_long">
+                <img src="{% static 'core/img/img_cat_long.png' %}" alt="">
+                <h1>Разрывной котенок (дополнение)</h1>
+            </div>
+            <div class="card_slide_long">
+                <img src="{% static 'core/img/img_cat_long.png' %}" alt="">
+                <h1>Разрывной котенок (дополнение)</h1>
+            </div>
+            <div class="card_slide_long">
+                <img src="{% static 'core/img/img_cat_long.png' %}" alt="">
+                <h1>Разрывной котенок (дополнение)</h1>
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const prevButton = document.getElementById("prevButton");
-        const nextButton = document.getElementById("nextButton");
-        const carousel = document.querySelector(".carousel");
-        const slides = document.querySelectorAll(".slide");
-        let currentIndex = 0;
-
-        prevButton.addEventListener("click", function() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateCarousel();
-        });
-
-        nextButton.addEventListener("click", function() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        });
-
-    </script>
-
-
 
 
     <!-- HTML ПОДВАЛ -->
@@ -264,5 +285,12 @@
         </div>
     </div>
 
+    <script>
+        let subMenu = document.getElementById("SubMenu");
+
+        function ToggleMenu(){
+            subMenu.classList.toggle("open_menu");
+        }
+    </script>
 </body>
 </html>

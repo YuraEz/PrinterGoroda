@@ -1,10 +1,485 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/imask"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito+Sans:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/prices.css' %}">
+    <title>Prices</title>
 </head>
 <body>
+    <!-- HTML ХЕДЕРA С НАВИГАЦИЕЙ ПО САЙТУ -->
+    <div class="header">
+        <nav>
+            <div class="header_logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <g clip-path="url(#clip0_59_195)">
+                    <path d="M7.6699 19.5631H4.36893C1.95604 19.5631 0 21.5191 0 23.932V50.0485H2.52427V24.9029C2.52427 23.2943 3.8283 21.9903 5.43689 21.9903H7.6699V19.5631Z" fill="#272B38"/>
+                    <path d="M42.233 21.9903H44.5631C46.1717 21.9903 47.4757 23.2943 47.4757 24.9029V50.0485H50V23.932C50 21.5191 48.044 19.5631 45.6311 19.5631H42.233V21.9903Z" fill="#272B38"/>
+                    <rect x="7.57275" y="30.0485" width="34.7573" height="2.52427" fill="#272B38"/>
+                    <path d="M15.1461 11.6019C9.94222 17 9.19141 26.1489 9.46649 30.0485H38.0587C38.0587 23.9903 41.1332 18.0097 42.6704 15.7767C45.583 10.4175 45.9875 3.02589 45.8257 0H16.651C17.8549 6.48544 16.1493 10.4369 15.1461 11.6019Z" fill="#272B38"/>
+                    <rect x="47.5728" y="47.5243" width="2.52427" height="45.0485" transform="rotate(90 47.5728 47.5243)" fill="#272B38"/>
+                    <rect x="14.3689" y="36.7476" width="2.52427" height="6.50485" transform="rotate(90 14.3689 36.7476)" fill="#272B38"/>
+                    <rect x="24.2717" y="36.7476" width="2.52427" height="6.50485" transform="rotate(90 24.2717 36.7476)" fill="#272B38"/>
+                    <rect x="34.1748" y="36.7476" width="2.52427" height="6.50485" transform="rotate(90 34.1748 36.7476)" fill="#FF284C"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_59_195">
+                    <rect width="50" height="50" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+                <h1>Printer<span>Goroda*****</span></h1>
+                <span class="tagline">Сервис печати фотографии</span>
+            </div>
+
+
+            <ul>
+                <li><a class="nav_item" href="{% url 'home' %}">Наши услуги</a></li>
+                <li><a class="nav_item" href="{% url 'prices' %}">Цены</a></li>
+                <li><a class="nav_item" href="{% url 'reviews' %}">Отзывы</a></li>
+                <li><a class="nav_item" href="{% url 'contacts' %}">Контакты</a></li>
+                <li>
+                    <div value="toggle" onclick="ToggleMenu()">
+                    <a class="nav_item" href="#">
+                        <span>Ещё</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="#FF284C" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sub_menu_wrap" id="SubMenu">
+            <div class="sub-menu">
+                <a href="my_profile" class="sub-menu-link">
+                    <p>Нестандартные размеры печати</p>
+                </a>
+                <svg class="svg_border" xmlns="http://www.w3.org/2000/svg" width="264" height="2" viewBox="0 0 264 2" fill="none">
+                    <path d="M264 1H0" stroke="#E9EAEB"/>
+                </svg>
+
+                <a href="#" class="sub-menu-link">
+                    <p>Доставка</p>
+                </a>
+                <svg class="svg_border" xmlns="http://www.w3.org/2000/svg" width="264" height="2" viewBox="0 0 264 2" fill="none">
+                    <path d="M264 1H0" stroke="#E9EAEB"/>
+                </svg>
+
+                <a href="{% url 'bombed_kittens' %}" class="sub-menu-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <g clip-path="url(#clip0_6_12)">
+                            <path d="M11.375 0.875C11.8391 0.875 12.2842 1.05937 12.6124 1.38756C12.9406 1.71575 13.125 2.16087 13.125 2.625V11.375C13.125 11.8391 12.9406 12.2842 12.6124 12.6124C12.2842 12.9406 11.8391 13.125 11.375 13.125H2.625C2.16087 13.125 1.71575 12.9406 1.38756 12.6124C1.05937 12.2842 0.875 11.8391 0.875 11.375V2.625C0.875 2.16087 1.05937 1.71575 1.38756 1.38756C1.71575 1.05937 2.16087 0.875 2.625 0.875H11.375ZM2.625 0C1.92881 0 1.26113 0.276562 0.768845 0.768845C0.276562 1.26113 0 1.92881 0 2.625L0 11.375C0 12.0712 0.276562 12.7389 0.768845 13.2312C1.26113 13.7234 1.92881 14 2.625 14H11.375C12.0712 14 12.7389 13.7234 13.2312 13.2312C13.7234 12.7389 14 12.0712 14 11.375V2.625C14 1.92881 13.7234 1.26113 13.2312 0.768845C12.7389 0.276562 12.0712 0 11.375 0L2.625 0Z" fill="#FF284C"/>
+                            <path d="M4.8125 3.5C4.8125 3.8481 4.67422 4.18194 4.42808 4.42808C4.18194 4.67422 3.8481 4.8125 3.5 4.8125C3.1519 4.8125 2.81806 4.67422 2.57192 4.42808C2.32578 4.18194 2.1875 3.8481 2.1875 3.5C2.1875 3.1519 2.32578 2.81806 2.57192 2.57192C2.81806 2.32578 3.1519 2.1875 3.5 2.1875C3.8481 2.1875 4.18194 2.32578 4.42808 2.57192C4.67422 2.81806 4.8125 3.1519 4.8125 3.5ZM11.8125 3.5C11.8125 3.8481 11.6742 4.18194 11.4281 4.42808C11.1819 4.67422 10.8481 4.8125 10.5 4.8125C10.1519 4.8125 9.81806 4.67422 9.57192 4.42808C9.32578 4.18194 9.1875 3.8481 9.1875 3.5C9.1875 3.1519 9.32578 2.81806 9.57192 2.57192C9.81806 2.32578 10.1519 2.1875 10.5 2.1875C10.8481 2.1875 11.1819 2.32578 11.4281 2.57192C11.6742 2.81806 11.8125 3.1519 11.8125 3.5ZM11.8125 10.5C11.8125 10.8481 11.6742 11.1819 11.4281 11.4281C11.1819 11.6742 10.8481 11.8125 10.5 11.8125C10.1519 11.8125 9.81806 11.6742 9.57192 11.4281C9.32578 11.1819 9.1875 10.8481 9.1875 10.5C9.1875 10.1519 9.32578 9.81806 9.57192 9.57192C9.81806 9.32578 10.1519 9.1875 10.5 9.1875C10.8481 9.1875 11.1819 9.32578 11.4281 9.57192C11.6742 9.81806 11.8125 10.1519 11.8125 10.5ZM4.8125 10.5C4.8125 10.8481 4.67422 11.1819 4.42808 11.4281C4.18194 11.6742 3.8481 11.8125 3.5 11.8125C3.1519 11.8125 2.81806 11.6742 2.57192 11.4281C2.32578 11.1819 2.1875 10.8481 2.1875 10.5C2.1875 10.1519 2.32578 9.81806 2.57192 9.57192C2.81806 9.32578 3.1519 9.1875 3.5 9.1875C3.8481 9.1875 4.18194 9.32578 4.42808 9.57192C4.67422 9.81806 4.8125 10.1519 4.8125 10.5ZM8.3125 7C8.3125 7.3481 8.17422 7.68194 7.92808 7.92808C7.68194 8.17422 7.3481 8.3125 7 8.3125C6.6519 8.3125 6.31806 8.17422 6.07192 7.92808C5.82578 7.68194 5.6875 7.3481 5.6875 7C5.6875 6.6519 5.82578 6.31806 6.07192 6.07192C6.31806 5.82578 6.6519 5.6875 7 5.6875C7.3481 5.6875 7.68194 5.82578 7.92808 6.07192C8.17422 6.31806 8.3125 6.6519 8.3125 7Z" fill="#FF284C"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_6_12">
+                                <rect width="14" height="14" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <p class="cats_p" >Взрывные котята</p>
+                </a>
+                <svg class="svg_border" xmlns="http://www.w3.org/2000/svg" width="264" height="2" viewBox="0 0 264 2" fill="none">
+                    <path d="M264 1H0" stroke="#E9EAEB"/>
+                </svg>
+
+                <a href="#" class="sub-menu-link">
+                    <p>фотограф</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let subMenu = document.getElementById("SubMenu");
+
+        function ToggleMenu(){
+            subMenu.classList.toggle("open_menu");
+        }
+    </script>
+
+
+
+
+
+    <!-- HTML КНОПКА КОЛИЧЕСТВА ВНУТРИ ТАБЛИЦЫ -->
+    <!-- <div class="number-input">
+        <button class="minus" onclick="decrease()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+            </svg>
+        </button>
+        <input type="number" id="number" value="0" />
+        <button class="plus" onclick="increase()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 0V12" stroke="#272B38"/>
+                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+            </svg>
+        </button>
+    </div> -->
+    <script>
+
+
+        function increase_price(span_id) {
+            var span = document.getElementById(span_id);
+            var value = parseInt(span.value);
+            span.value = value + 40;
+        }
+
+        function increase(input_id, span_id) {
+            var input = document.getElementById(input_id);
+            var value = parseInt(input.value);
+            input.value = value + 1;
+            increase_price(span_id)
+        }
+
+        function decrease(input_id, span_id) {
+            var input = document.getElementById(input_id);
+            var value = parseInt(input.value);
+            if (value > 0) {
+            input.value = value - 1;
+            }
+            increase_price(span_id)
+        }
+    </script>
+
+
+
+
+
+    <!-- HTML ДЛЯ ТАБЛИЦЫ -->
+    <div class="table_wrap">
+        <p>Цена</p>
+
+        <table class="rounded_table">
+            <tr>
+                <th class="size_th">Размер</th>
+                <th class="price_th">Цена</th>
+                <th class="amount_th">Количество</th>
+                <th class="final_price_th">Итоговая цена</th>
+                <th class="point_th">Баллы</th>
+                <th class="lam_tr">Ламинация</th>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number1', 'price_number1')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number1" value="0" />
+                        <button class="plus" onclick="increase('number1')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <!-- <td><span id="price_number1">0</span> Р</td> -->
+                <td><input type="number"  id="price_number1" readonly value="0"></td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number2')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number2" value="0" />
+                        <button class="plus" onclick="increase('number2')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number3')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number3" value="0" />
+                        <button class="plus" onclick="increase('number3')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number4')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number4" id="number4" value="0" />
+                        <button class="plus" onclick="increase('number4')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number5')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number5" value="0" />
+                        <button class="plus" onclick="increase('number5')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number6')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number6" value="0" />
+                        <button class="plus" onclick="increase('number6')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number7')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number7" value="0" />
+                        <button class="plus" onclick="increase('number7')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number8')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number8" value="0" />
+                        <button class="plus" onclick="increase('number8')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10x15</td>
+                <td>10Р</td>
+                <td>
+                    <div class="number-input">
+                        <button class="minus" onclick="decrease('number9')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                <path d="M12 1L-5.96046e-08 0.999999" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                        <input type="number" id="number9" value="0" />
+                        <button class="plus" onclick="increase('number9')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M6 0V12" stroke="#272B38"/>
+                                <path d="M12 6L-5.96046e-08 6" stroke="#272B38"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td>1000000Р</td>
+                <td class="points_color" >20 000</td>
+                <td><input class="checkboc_color" type="checkbox"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+    <!-- HTML ФОРМА ОФОРМЛЕНИЯ ЗАКАЗА -->
+
+    <div class="order_card">
+        <div class="profit">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M9 1.125C4.65117 1.125 1.125 4.65117 1.125 9C1.125 13.3488 4.65117 16.875 9 16.875C13.3488 16.875 16.875 13.3488 16.875 9C16.875 4.65117 13.3488 1.125 9 1.125ZM9 15.5391C5.38945 15.5391 2.46094 12.6105 2.46094 9C2.46094 5.38945 5.38945 2.46094 9 2.46094C12.6105 2.46094 15.5391 5.38945 15.5391 9C15.5391 12.6105 12.6105 15.5391 9 15.5391Z" fill="#FF284C"/>
+                    <path d="M8.15625 12.0938C8.15625 12.3175 8.24514 12.5321 8.40338 12.6904C8.56161 12.8486 8.77622 12.9375 9 12.9375C9.22378 12.9375 9.43839 12.8486 9.59662 12.6904C9.75485 12.5321 9.84375 12.3175 9.84375 12.0938C9.84375 11.87 9.75485 11.6554 9.59662 11.4971C9.43839 11.3389 9.22378 11.25 9 11.25C8.77622 11.25 8.56161 11.3389 8.40338 11.4971C8.24514 11.6554 8.15625 11.87 8.15625 12.0938ZM8.57812 10.125H9.42188C9.49922 10.125 9.5625 10.0617 9.5625 9.98438V5.20312C9.5625 5.12578 9.49922 5.0625 9.42188 5.0625H8.57812C8.50078 5.0625 8.4375 5.12578 8.4375 5.20312V9.98438C8.4375 10.0617 8.50078 10.125 8.57812 10.125Z" fill="#FF284C"/>
+                </svg>
+                Выгодный
+            </span>
+            <input type="radio">
+            <span>Обычный</span>
+        </div>
+        <h1>Оформление заказа</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input_string">
+                <input type="text" name="name" placeholder="Имя" required>
+            </div>
+            <div class="input_string">
+                <input type="text" name="Contact" placeholder="Telegram/What'sApp/VK" required>
+            </div>
+            <div class="input_string">
+                <input type="text" id="phone_number" name="phone" placeholder="Номер телефона" required>
+            </div>
+            <div class="amount_total">
+                <span>Кол-во:<span>900 000</span></span>
+                <span>Итог:<span>9 000 000Р</span></span>
+            </div>
+
+            <div class="remind_about_profite">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M9 1.125C4.65117 1.125 1.125 4.65117 1.125 9C1.125 13.3488 4.65117 16.875 9 16.875C13.3488 16.875 16.875 13.3488 16.875 9C16.875 4.65117 13.3488 1.125 9 1.125ZM9 15.5391C5.38945 15.5391 2.46094 12.6105 2.46094 9C2.46094 5.38945 5.38945 2.46094 9 2.46094C12.6105 2.46094 15.5391 5.38945 15.5391 9C15.5391 12.6105 12.6105 15.5391 9 15.5391Z" fill="#FF284C"/>
+                        <path d="M8.15625 12.0938C8.15625 12.3175 8.24514 12.5321 8.40338 12.6904C8.56161 12.8486 8.77622 12.9375 9 12.9375C9.22378 12.9375 9.43839 12.8486 9.59662 12.6904C9.75485 12.5321 9.84375 12.3175 9.84375 12.0938C9.84375 11.87 9.75485 11.6554 9.59662 11.4971C9.43839 11.3389 9.22378 11.25 9 11.25C8.77622 11.25 8.56161 11.3389 8.40338 11.4971C8.24514 11.6554 8.15625 11.87 8.15625 12.0938ZM8.57812 10.125H9.42188C9.49922 10.125 9.5625 10.0617 9.5625 9.98438V5.20312C9.5625 5.12578 9.49922 5.0625 9.42188 5.0625H8.57812C8.50078 5.0625 8.4375 5.12578 8.4375 5.20312V9.98438C8.4375 10.0617 8.50078 10.125 8.57812 10.125Z" fill="#FF284C"/>
+                    </svg>
+                    Внимание: вы оформляете заказ без выгодного режима, заказывая с выгодным режимом ваша экономия составит: 25 010 ₽ (250 фотографий)
+                </span>
+            </div>
+
+            <div class="submit_btn">
+                <button type="submit"> <span>Загрузить фотографии</span> </button>
+            </div>
+        </form>
+        <script>
+            const element = document.getElementById('phone_number');
+            const maskOptions = {
+            mask: '+{7}(000)000-00-00'
+            };
+            const mask = IMask(element, maskOptions);
+        </script>
+    </div>
+
+
+
+
+
+    <!-- HTML ФОРМА ПРОВЕРКИ КОЛИЧЕСТВА БАЛЛОВ -->
+
+    <div class="amount_of_point_card">
+        <h1>Проверить кол-во баллов</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input_string">
+                <input type="text" name="name" placeholder="Имя" required>
+            </div>
+            <div class="input_string">
+                <input type="text" id="phone_number" name="phone" placeholder="Номер телефона" required>
+            </div>
+            <div class="submit_btn">
+                <button type="submit"> <span>Узнать кол-во баллов</span> </button>
+            </div>
+        </form>
+        <div class="submit_btn">
+            <button type="submit"> <span>Использовать баллы</span> </button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- HTML ФОРМА ДОБАВЛЕНИЕ ПРОМОКОДА -->
+
+    <div class="promo_code_card">
+        <h1>Промокод</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input_string">
+                <input type="text" name="name" placeholder="Введите промокод (при наличии)" required>
+            </div>
+            <div class="submit_btn">
+                <button type="submit"> <span>Использовать промокод</span> </button>
+            </div>
+        </form>
+    </div>
+
+
 
 </body>
 </html>

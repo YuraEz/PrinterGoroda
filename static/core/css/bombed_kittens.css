@@ -1,0 +1,603 @@
+/* HTML ХЕДЕРA С НАВИГАЦИЕЙ ПО САЙТУ */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.header1
+{
+    padding: 15px 147px;
+}
+
+nav
+{
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+nav ul
+{
+    width: 100%;
+    text-align: right;
+}
+
+nav ul li
+{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 30px;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+}
+
+nav ul li a svg
+{
+    margin-left: 7px;
+}
+
+.header_logo
+{
+    height: 50px;
+    width: 600px;
+}
+
+.header_logo h1
+{
+    color: #272B38;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: 0.18px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+}
+
+.header_logo h1 span
+{
+    color: #FF284C;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.18px;
+}
+
+.tagline
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 11.7px */
+    position: relative;
+    bottom: 52px;
+    left: 70px;
+}
+
+.sub_menu_wrap
+{
+    width: 264px;
+    height: 152px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+
+    position: absolute;
+    right: 147px;
+    z-index: 1;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub_menu_wrap.open_menu
+{
+    max-height: 155px;
+}
+
+.sub_menu
+{
+    position: relative;
+    right: 30px;
+}
+
+.sub_menu_wrap a
+{
+    text-decoration: none;
+
+    color: #272B38;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+
+    margin-left: 25px;
+    margin-top: 10px;
+
+    position: relative;
+    right: 25px;
+    bottom: 10px;
+}
+
+.cats_p
+{
+    color: #FF284C;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+}
+
+.sub_menu_wrap a svg
+{
+    position: relative;
+    top: 20px;
+    left: 99px;
+}
+
+.svg_border
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    right: 0px;
+    bottom: 1px;
+}
+
+
+
+
+
+/* CSS ВЗРЫВНЫЕ КОТЯТЯ ПОЗИЦИЯ */
+.bombed_kittens_position
+{
+    padding: 90px 147px;
+    max-width: 5000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* CSS ВЗРЫВНЫЕ КОТЯТЯ ЦЕНЫ */
+
+.bombed_kittens_price
+{
+    padding: 30px 25px;
+
+    max-width: 332px;
+    height: 435px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+}
+
+.bombed_kittens_price h1
+{
+    color: #272B38;
+    font-family: Comfortaa;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.bombed_kittens_price span
+{
+    max-width: 312px;
+
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+    margin-top: 0;
+}
+
+.bombed_kittens_price h2
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.bombed_kittens_price p
+{
+    margin-top: 5px;
+
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bombed_kittens_price form
+{
+    margin-top: 30px;
+}
+
+.bombed_kittens_price input
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin-top: 5px;
+
+    border: none;
+    transition: border 0.3s ease, color 0.3s ease;
+    /* border-color: transparent; */
+    border-radius: 8px;
+    background: #E9EAEB;
+
+    display: flex;
+    width: 303px;
+    padding: 8px 14px;
+    align-items: flex-start;
+    gap: 10px
+}
+
+.bombed_kittens_price input:focus,
+.bombed_kittens_price input:valid
+{
+    border: 1px solid #4A8FB6;
+    color: #272B38;
+}
+
+
+.bombed_kittens_price button
+{
+    color: #FFF;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    margin-top: 15px;
+    display: flex;
+    width: 332px;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 8px;
+    background: #FF284C;
+
+    transition: background-color 0.3s ease;
+}
+
+.bombed_kittens_price button:hover
+{
+    background: #FF627C;
+}
+
+.bombed_kittens_price button:active
+{
+    background: #D10628;
+}
+
+
+
+
+
+/* CSS ВЗРЫВНЫЕ СЛАЙДЫ */
+
+.bombed_kittens_slides
+{
+    min-width: 754px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_slide
+{
+    max-width: 362px;
+    height: 362px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+}
+
+.card_slide img
+{
+    max-width: 362px;
+    height: 290px;
+    flex-shrink: 0;
+    object-fit: cover;
+
+    border-radius: 10px 10px 0px 0px;
+    background: url(<path-to-image>), lightgray -0.449px 0px / 119.384% 100% no-repeat;
+}
+
+.card_slide h1
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-left: 30px;
+    margin-top: 19px;
+}
+
+.card_slide_long
+{
+    margin-top: 30px;
+
+    max-width: 754px;
+    height: 362px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+}
+
+.card_slide_long img
+{
+    max-width: 754px;
+    height: 290px;
+    flex-shrink: 0;
+    object-fit: cover;
+
+    border-radius: 10px 10px 0px 0px;
+    background: url(<path-to-image>), lightgray 0px -195.828px / 100% 173.266% no-repeat;
+}
+
+.card_slide_long h1
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-left: 30px;
+    margin-top: 19px;
+}
+
+
+
+
+
+/* CSS ПОДВАЛ */
+
+/* .footer_wrap
+{
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+} */
+
+.footer
+{
+
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+    /* width: 100%; */
+    height: 210px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_logo
+{
+    height: 50px;
+    width: 260px;
+    margin-bottom: 35px;
+}
+
+.footer_logo h1
+{
+    color: #FFF;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: 0.18px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+}
+
+.footer_logo h1 span
+{
+    color: #FF284C;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.18px;
+}
+
+.footer_tagline
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 11.7px */
+    position: relative;
+    bottom: 52px;
+    left: 70px;
+}
+
+.owner_info p
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.owner_info p svg
+{
+    margin-right: 10px;
+}
+
+.footer_2 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_2 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_2 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.footer_3 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_3 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_3 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+
+.footer_4 h1
+{
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 26.4px */
+}
+
+.footer_4 p
+{
+    margin-bottom: 10px;
+}
+
+.points
+{
+    color: #FFF;
+    width: 80px;
+    height: 1px;
+    position: relative;
+    bottom: 23px;
+}
+
+.footer_4 p a
+{
+    text-decoration: none;
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.social_network_links
+{
+    margin-top: 37px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_network_links img
+{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
