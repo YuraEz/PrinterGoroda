@@ -9,7 +9,7 @@
 
 .header
 {
-    padding: 15px 147px;
+    padding: 15px 117px 15px 147px;
 }
 
 nav
@@ -262,9 +262,7 @@ input[type="number"]::-webkit-outer-spin-button
 /* CSS ДЛЯ ТАБЛИЦЫ */
 .table_wrap
 {
-    position: absolute;
-    left: 147px;
-    top: 155px;
+
 }
 
 .table_wrap p
@@ -344,14 +342,170 @@ tr:hover td
     color: #FF284C;
 } */
 
+.final_price
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.final_price h2
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 30px;
+    margin-top: 47px;
+}
+
+.final_price span
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 
 
+
+
+
+/* CSS Ззади фигня */
+
+.wrap_under_price
+{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+}
+
+.wrap_under_price p
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    max-width: 460px;
+}
+
+.wrap_under_price_container
+{
+    width: 362px;
+    height: 362px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #E9EAEB;
+}
 
 
 /* CSS ФОРМА ОФОРМЛЕНИЯ ЗАКАЗА */
 
+.profit
+{
+    display: flex;
+}
+
+.profit svg
+{
+    margin-right: 5px;
+}
+
+.profit h1
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    margin-right: 15px;
+}
+
+.profit label
+{
+    position: relative;
+    bottom: 7px;
+}
+
+.profit label span
+{
+    color: #272B38;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+}
+
+.checkbox
+{
+    display: inline-block;
+}
+
+.checkbox_input
+{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+
+.checkbox span
+{
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    padding: 8px;
+    padding-left: 70px;
+}
+
+.checkbox_inner::before
+{
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 56px;
+    height: 33px;
+    border-radius: 16px;
+    background-color: #E9EAEB;
+    transition: background-color .3s;
+}
+
+.checkbox_inner::after
+{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 16px;
+    background-color: #7E8189;
+    left: 5px;
+    top: 5px;
+    transition: backround-color .3s, left;
+}
+
+.checkbox_input:checked + .checkbox_inner::after
+{
+    background-color: #FF284C;
+    left: 29px;
+}
+
 .order_card
 {
+    margin-top: 37px;
     width: 264px;
     height: 378px;
     flex-shrink: 0;
@@ -362,17 +516,12 @@ tr:hover td
     box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
 
     padding: 17px 20px;
-
-    position: absolute;
-    right: 147px;
-    top: 226px;
 }
 
 .order_card h1
 {
     width: 264px;
     margin-bottom: 14px;
-
 
     color: #272B38;
     font-family: Nunito Sans;
@@ -416,7 +565,139 @@ tr:hover td
 .amount_total
 {
     margin-top: 20px;
-    margin-bottom: 10px;
+}
+
+.amount_total span
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.amount_total span span
+{
+    color: #272B38;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.order_label
+{
+    display: flex;
+    margin-top: 10px;
+}
+
+.order_label label
+{
+    position: relative;
+    bottom: 7px;
+}
+
+.order_label label span
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.checkbox_order
+{
+    display: inline-block;
+}
+
+.checkbox_input_order
+{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+
+.checkbox_order span
+{
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    padding: 8px;
+    padding-left: 60px;
+}
+
+.checkbox_inner_order::before
+{
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 56px;
+    height: 33px;
+    border-radius: 16px;
+    background-color: #E9EAEB;
+    transition: background-color .3s;
+}
+
+.checkbox_inner_order::after
+{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 16px;
+    background-color: #7E8189;
+    left: 5px;
+    top: 5px;
+    transition: backround-color .3s, left;
+}
+
+.checkbox_input_order:checked + .checkbox_inner_order::after
+{
+    background-color: #FF284C;
+    left: 29px;
+}
+
+
+
+.remind_about_profite
+{
+    margin-top: 10px;
+    display: flex;
+}
+
+
+.warning
+{
+    margin-left: 7px;
+}
+
+.warning span
+{
+    color: #FF284C;
+    font-family: Nunito Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.warning span span
+{
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 
@@ -475,11 +756,8 @@ tr:hover td
     background: #FFF;
     box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
 
+    margin-top: 20px;
     padding: 17px 20px;
-
-    position: absolute;
-    right: 147px;
-    top: 626px;
 }
 
 .amount_of_point_card h1
@@ -527,6 +805,61 @@ tr:hover td
     color: #272B38;
 }
 
+.use_balls_btn button
+{
+    display: flex;
+    width: 224px;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+    border: 1px solid #272B38;
+
+    color: #272B38;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.total_balls
+{
+    display: inline-block;
+    text-align: center;
+    margin-left: 45px;
+}
+
+.total_balls p
+{
+    color: #7E8189;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 13px */
+    margin-bottom: 10px;
+}
+
+.total_balls span
+{
+    margin-top: 10px;
+    color: #FF284C;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+}
+
 .amount_total
 {
     margin-top: 20px;
@@ -541,6 +874,8 @@ tr:hover td
 
 .promo_code_card
 {
+    margin-top: 20px;
+
     width: 264px;
     height: 149px;
     flex-shrink: 0;
@@ -552,9 +887,7 @@ tr:hover td
 
     padding: 17px 20px;
 
-    position: absolute;
-    right: 147px;
-    top: 925px;
+
 }
 
 .promo_code_card h1
@@ -606,4 +939,234 @@ tr:hover td
 {
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.all
+{
+    padding: 90px 147px 0 147px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/* CSS ПОДВАЛ */
+
+/* .footer_wrap
+{
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+} */
+
+.footer
+{
+    margin-top: 80px;
+    padding: 40px 147px 0 147px;
+    background: #272B38;
+    /* width: 100%; */
+    height: 244px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_logo
+{
+    height: 50px;
+    width: 260px;
+    margin-bottom: 35px;
+}
+
+.footer_logo h1
+{
+    color: #FFF;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: 0.18px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+}
+
+.footer_logo h1 span
+{
+    color: #FF284C;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.18px;
+}
+
+.footer_tagline
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 11.7px */
+    position: relative;
+    bottom: 52px;
+    left: 70px;
+}
+
+.owner_info p
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.owner_info p svg
+{
+    margin-right: 10px;
+}
+
+.footer_2 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_2 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_2 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.footer_3 h1
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.footer_3 p
+{
+    margin-bottom: 10px;
+}
+
+.footer_3 p a
+{
+    text-decoration: none;
+    color: #7E8189;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+
+.footer_4 h1
+{
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 26.4px */
+}
+
+.footer_4 p
+{
+    margin-bottom: 10px;
+}
+
+.points
+{
+    color: #FFF;
+    width: 80px;
+    height: 1px;
+    position: relative;
+    bottom: 23px;
+}
+
+.footer_4 p a
+{
+    text-decoration: none;
+    color: #FFF;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 15.4px */
+}
+
+.social_network_links
+{
+    margin-top: 37px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_network_links img
+{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+
+
+
+/* CSS ПОПАП */
+.popup_bg
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.30);
+    display: none;
+}
+
+.popup
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1146px;
+    height: 594px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 24px 0px rgba(27, 0, 0, 0.20);
+
+    transform: translate(-50%, -50%);
 }

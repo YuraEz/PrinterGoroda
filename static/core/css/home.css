@@ -8,7 +8,7 @@
 
 .header1
 {
-    padding: 15px 147px;
+    padding: 15px 117px 15px 147px;
 }
 
 nav
@@ -176,115 +176,6 @@ nav ul li a svg
 
 
 
-/* HTML КАРУСЕЛЬ СЛАЙД */
-
-/* .carousel
-{
-    width: 100%;
-    height: auto;
-    max-height: 500px; */
-    /* background: rgba(39, 43, 56, 0.50); */
-/* }
-
-.row {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(39, 43, 56, 0.50);
-}
-
-.row img {
-    max-width: 100%;
-    max-height: 500px;
-
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-} */
-
-/* .my_carousel1{
-    padding: 0;
-    z-index: 0;
-}
-
-.my_carousel1 .carousel-item
-{
-    max-height: 500px;
-}
-
-.my_carousel1 .carousel-item img
-{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-} */
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    width: 100%;
-    height: 500px;
-    transition: transform 0.4s ease-in-out;
-}
-
-.slider img {
-    width: 100vw;
-    height: 500px;
-    object-fit: cover;
-}
-
-.slider-container button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-/* .prev_next_btns
-{
-    display: flex;
-    justify-content: space-between;
-} */
-
-.prev-btn {
-    width: 60px;
-    height: 500px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    position: relative;
-    left: 20px;
-}
-
-.next-btn {
-    width: 60px;
-    height: 500px;
-    flex-shrink: 0;
-    color: #272B38;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-    right: 20px;
-}
-
-
-
-
-
-
 /* CSS ИНФОРМАЦИЯ */
 
 .info_sign
@@ -292,7 +183,6 @@ nav ul li a svg
     margin-left: 147px;
     position: absolute;
     top: 246px;
-    /* left: 147px; */
     z-index: 2;
 }
 
@@ -352,10 +242,83 @@ nav ul li a svg
 
 
 
+/* HTML КАРУСЕЛЬ СЛАЙД */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slider img {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+}
+
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.prev-btn {
+    width: 60px;
+    height: 500px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover
+{
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.next-btn {
+    width: 60px;
+    height: 500px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    right: 0px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover
+{
+    background: rgba(255, 255, 255, 0.20);
+}
+
+
+
+
+
 /* CSS ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ */
 .wrap_uslugi
 {
-    padding: 0 117px;
+    padding: 0 147px;
 }
 
 .title_uslugi
@@ -384,11 +347,11 @@ nav ul li a svg
 
 .first_crd
 {
-    width: 558px;
+    max-width: 558px;
     height: 388px;
     flex-shrink: 0;
 
-    margin-inline: 30px;
+    margin-inline: 0;
 
     border-radius: 10px;
     background: #E9EAEB;
@@ -398,7 +361,7 @@ nav ul li a svg
 
 .first_crd img
 {
-    width: 558px;
+    max-width: 558px;
     height: 245px;
     flex-shrink: 0;
 
@@ -419,6 +382,7 @@ nav ul li a svg
 
     margin-left: 25px;
     margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 .first_crd p
@@ -440,7 +404,6 @@ nav ul li a svg
     position: relative;
     left: 331px;
     bottom: 11px;
-
 }
 
 /* .btn1
@@ -490,24 +453,27 @@ nav ul li a svg
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    display: flex;
+    justify-content: space-between;
 }
 
 .second_crd {
-    width: 362px;
+    max-width: 362px;
     height: 388px;
-    flex-shrink: 0;
 
-    margin-inline: 30px;
+
+    /* margin-inline: 30px; */
 
     border: none;
     border-radius: 10px;
     background: #E9EAEB;
+    margin-bottom: 30px;
 }
 
 .second_crd img {
-    width: 362px;
+    max-width: 362px;
     height: 245px;
-    flex-shrink: 0;
+
 
     border-radius: 10px;
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
@@ -572,6 +538,7 @@ nav ul li a svg
     background: #467EDB;
 
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .order_btn
@@ -592,27 +559,9 @@ nav ul li a svg
     border: none;
     border-radius: 8px;
     background: #55BC44;
+    cursor: pointer;
 }
 
-
-/* @media screen and (max-width: 800px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(9, 1fr);
-    }
-    .card {
-        margin-inline: 0;
-    }
-} */
 
 
 
@@ -888,12 +837,15 @@ nav ul li a svg
 
 .wrap_fotootchiot
 {
-    margin-bottom: 90px;
+    padding: 0 147px 0 0;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .bg_fotootchiot
 {
-    width: 607px;
+    max-width: 607px;
     height: 462px;
     flex-shrink: 0;
 
@@ -901,19 +853,37 @@ nav ul li a svg
     background: #272B38;
 }
 
+.slides
+{
+    width: 1100px
+}
 
-.carousel-container-2 {
-    position: relative;
-    width: 852px; /* Задайте желаемую ширину карусели */
+.carousel-container {
+    /* position: relative; */
+    /* width: 80%; */
+    /* margin: 0 auto; */
+    max-width: 900px;
+    margin-left: 147px;
     overflow: hidden;
 }
 
-.carousel11 {
+.carousel {
     display: flex;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-2 img {
+.slide {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 24px;
+    box-sizing: border-box;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.slide img
+{
     width: 264px;
     height: 264px;
     flex-shrink: 0;
@@ -925,26 +895,100 @@ nav ul li a svg
     margin-right: 30px;
 }
 
-/* .carousel-container-2 button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-} */
-
-.carousel-container-2 button
-{
+#prevButton,
+#nextButton {
     width: 58px;
     height: 58px;
-    border-radius: 50%;
-    background: #272B38;
+    flex-shrink: 0;
+    position: relative;
+    bottom: 60px;
 }
 
-.next-btn11 {
+#prevButton {
+    left: 0;
+    position: relative;
+    left: 441px;
+}
+
+#nextButton {
     right: 0;
+    position: relative;
+    left: 461px;
+}
+
+ /* .carousel-container button
+ {
+     border: none;
+     background-color: #FFF;
+ } */
+
+.slide-numbers {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 135px;
+    bottom: 14px;
+}
+
+
+.slide-numbers span
+{
+    color: #FFF;
+    font-family: Nunito Sans;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.fotootchiot_sign
+{
+    text-align: right;
+}
+
+.fotootchiot_sign h1
+{
+    color: #272B38;
+    text-align: right;
+    font-family: Comfortaa;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.fotootchiot_sign p
+{
+    color: #7E8189;
+    text-align: right;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    max-width: 264px;
+    margin-top: 12px;
+}
+
+.fotootchiot_sign button
+{
+    color: #272B38;
+    background: #fff;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 35px;
+
+    border-radius: 8px;
+    border: 2px solid #272B38;
 }
 
 
@@ -961,7 +1005,7 @@ nav ul li a svg
 
 .footer
 {
-
+    margin-top: 50px;
     padding: 40px 147px 0 147px;
     background: #272B38;
     /* width: 100%; */

@@ -1,0 +1,48 @@
+@media screen and (max-width: 1250px)
+{
+    .header
+    {
+        padding: 15px 112px 15px 147px;
+    }
+
+    nav ul li
+    {
+        margin: 0px 25px;
+    }
+}
+
+@media screen and (max-width: 1250px)
+{
+    .header
+    {
+        padding: 15px 75px 15px 100px;
+    }
+
+    .wrap_contact_owner_info
+    {
+        padding: 90px 100px 130px;
+    }
+
+    .sub_menu_wrap
+    {
+        right: 100px;
+    }
+
+    .footer
+    {
+        padding: 40px 100px 0 100px;
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .header
+    {
+        padding: 15px 80px 15px 100px;
+    }
+    nav ul li
+    {
+        margin: 0px 20px;
+    }
+
+}

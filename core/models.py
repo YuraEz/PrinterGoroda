@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class OrderedCall(models.Model):
     name = models.CharField(max_length=50)
@@ -14,7 +14,7 @@ class OrderedCall(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     sessid = models.CharField(max_length=100)
     baseCost = models.DecimalField(max_digits=10, decimal_places=2)
     finalCost = models.DecimalField(max_digits=10, decimal_places=2)
@@ -32,7 +32,7 @@ class Order(models.Model):
         verbose_name_plural = 'Заказы'
 
 
-class User(models.Model):
+class CustomUser(models.Model):
     phone = models.CharField(max_length=20)
     fio = models.CharField(max_length=100)
     balls = models.DecimalField(max_digits=10, decimal_places=2)
@@ -45,5 +45,13 @@ class PromoCode(models.Model):
 
 
 class PromoCodeUses(models.Model):
-    code = models.ForeignKey('PromoCode', on_delete=models.CASCADE)
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    code = models.ForeignKey(PromoCode, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Reviews(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.TextField(max_length=100)
+    content = models.TextField()
+    images = models.ImageField(upload_to="reviews/%Y/%m/%d/")
+

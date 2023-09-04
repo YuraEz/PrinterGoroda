@@ -8,7 +8,7 @@
 
 .header
 {
-    padding: 15px 147px;
+    padding: 15px 117px 15px 147px;
 }
 
 nav
@@ -180,7 +180,7 @@ nav ul li a svg
 
 .order_a_call_card
 {
-    width: 558px;
+    max-width: 558px;
     height: 241px;
     flex-shrink: 0;
 
@@ -199,7 +199,7 @@ nav ul li a svg
 
 .order_a_call_card h1
 {
-    width: 264px;
+    max-width: 264px;
     position: relative;
     top: 30px;
     left: 30px;

@@ -1,9 +1,8 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import OrderedCall
+from .models import OrderedCall, Reviews
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
 
 def register_user(request):
     '''
@@ -48,6 +47,16 @@ def prices(request):
 
 
 def reviews(request):
+    print("До проверки")
+    if request.method == "POST":
+        user = request.user
+        name = request.POST['review_name']
+        content = request.POST['review_content']
+        images = request.FILES["images"]
+        new_review = Reviews(user=user, name=name, content=content, images=images)
+        new_review.save()
+        return redirect('reviews')
+    print("Ne Post")
     return render(request, 'core/reviews.html')
 
 
@@ -90,4 +99,4 @@ def bombed_kittens(request):
 
 
 def photographer(request):
-    pass
+    return render(request, 'core/photographer.html')
