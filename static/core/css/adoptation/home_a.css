@@ -109,13 +109,13 @@
         margin-top: 5px;
     }
 
-    /* .second_crd:nth-child(2n-1) {
+    .second_crd:nth-child(2n-1) {
         justify-self: start;
     }
 
     .second_crd:nth-child(2n) {
         justify-self: end;
-    } */
+    }
 
     .slide img
     {
@@ -416,7 +416,13 @@
         left: 356px;
     }
 
+    .second_crd:nth-child(2n-1) {
+        justify-self: center;
+    }
 
+    .second_crd:nth-child(2n) {
+        justify-self: center;
+    }
 
     .first_container
     {
@@ -432,6 +438,9 @@
         grid-template-rows: repeat(3, 1fr);
         justify-items: center;
     }
+
+
+
 }
 
 

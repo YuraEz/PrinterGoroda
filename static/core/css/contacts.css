@@ -180,7 +180,7 @@ nav ul li a svg
 
 .order_a_call_card
 {
-    max-width: 558px;
+    width: 558px;
     height: 241px;
     flex-shrink: 0;
 
@@ -199,7 +199,7 @@ nav ul li a svg
 
 .order_a_call_card h1
 {
-    max-width: 264px;
+    width: 264px;
     position: relative;
     top: 30px;
     left: 30px;
@@ -215,6 +215,7 @@ nav ul li a svg
 
 .input_string input
 {
+    display: flex;
     color: #7E8189;
     font-family: Nunito Sans;
     font-size: 16px;
@@ -255,6 +256,7 @@ nav ul li a svg
     justify-content: center;
     align-items: center;
     gap: 10px;
+
     position: relative;
     left: 30px;
     top: 45px;
